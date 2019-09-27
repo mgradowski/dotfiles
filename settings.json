@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.addBrackets": true,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "editor.minimap.enabled": true,
+    "editor.rulers": [79],
+    "git.confirmSync": false,
+    "workbench.sideBar.location": "left",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "all",
+    "breadcrumbs.enabled": true
+}
