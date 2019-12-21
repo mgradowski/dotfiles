@@ -2,7 +2,9 @@
     "python.autoComplete.addBrackets": true,
     "python.pythonPath": "/usr/local/bin/python3",
     "editor.minimap.enabled": true,
-    "editor.rulers": [79],
+    "editor.rulers": [
+        79
+    ],
     "git.confirmSync": false,
     "workbench.sideBar.location": "left",
     "editor.fontFamily": "Fira Code",
@@ -10,5 +12,23 @@
     "terminal.integrated.fontFamily": "Fira Code",
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderWhitespace": "all",
-    "breadcrumbs.enabled": true
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0,
+    "C_Cpp.clang_format_fallbackStyle": "Mozilla",
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.loggingLevel": "Warning",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.colorTheme": "Default Light+",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++20",
+    "lean.executablePath": "/Users/mgradowski/Downloads/lean-3.4.2-darwin/bin/lean",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.olean": true
+    },
+    "liveshare.accountProvider": ""
 }
