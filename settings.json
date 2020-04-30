@@ -17,8 +17,6 @@
     "C_Cpp.clang_format_fallbackStyle": "Mozilla",
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.loggingLevel": "Warning",
-    "workbench.iconTheme": "vs-minimal",
-    "workbench.colorTheme": "Default Light+",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++20",
     "lean.executablePath": "/Users/mgradowski/Downloads/lean-3.4.2-darwin/bin/lean",
@@ -30,5 +28,12 @@
         "**/.DS_Store": true,
         "**/*.olean": true
     },
-    "liveshare.accountProvider": ""
+    "liveshare.accountProvider": "",
+    "workbench.colorTheme": "Default Light+",
+    "workbench.panel.defaultLocation": "right",
+    "editor.renderControlCharacters": true,
+    "java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home",
+    "shellcheck.customArgs": [
+        "-x"
+    ]
 }
