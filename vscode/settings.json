@@ -1,0 +1,59 @@
+{
+    "breadcrumbs.enabled": true,
+    "cSpell.enabled": true,
+    "cSpell.enableFiletypes": [
+        "!latex"
+    ],
+    "cSpell.userWords": [
+        "arange",
+        "centroid's",
+        "numpy",
+        "pyplot"
+    ],
+    "editor.cursorBlinking": "expand",
+    "editor.fontFamily": "Source Code Pro",
+    "editor.minimap.enabled": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.quickSuggestions": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "explorer.sortOrder": "type",
+    "files.associations": {
+        "*.pgsql": "sql"
+    },
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.svn": true,
+        "**/*.olean": true,
+        "**/CVS": true
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.autoComplete.addBrackets": true,
+    "python.languageServer": "Pylance",
+    "python.pythonPath": "/usr/local/opt/python@3.8/bin/python3.8",
+    "terminal.integrated.fontFamily": "Inconsolata",
+    "vim.smartRelativeLine": true,
+    "vim.statusBarColorControl": true,
+    "window.zoomLevel": 0,
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#141414",
+        "statusBar.background": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f"
+    },
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.panel.defaultLocation": "bottom",
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideTabs": false
+}
