@@ -1,13 +1,13 @@
 # dotfiles
 
 Link:
-fish```
+```sh
 cd ~/dotfiles/
 stow [--adopt] package_name
 ```
 
 Unlink
-fish```
+```sh
 cd ~/dotflies/
 stow -D package_name
 ```
