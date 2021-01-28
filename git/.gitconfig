@@ -1,3 +1,6 @@
 [user]
 	email = mikolaj.gradowski@hotmail.com
 	name = Mikołaj Gradowski
+
+[pull]
+    rebase = true
