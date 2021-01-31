@@ -1,1 +1,6 @@
 plotter implicit
+hna https://hn.algolia.com/
+hn news.ycombinator.com
+npd https://numpy.org/doc/stable/reference/index.html
+spd https://docs.scipy.org/doc/scipy/reference/
+yt youtube.com

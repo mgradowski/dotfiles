@@ -7,8 +7,12 @@
     "cSpell.userWords": [
         "arange",
         "centroid's",
+        "cright",
         "numpy",
-        "pyplot"
+        "pyplot",
+        "rleft",
+        "rright",
+        "sympy"
     ],
     "editor.cursorBlinking": "expand",
     "editor.fontFamily": "Source Code Pro",
