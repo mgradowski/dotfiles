@@ -59,5 +59,6 @@
     "workbench.panel.defaultLocation": "bottom",
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
-    "zenMode.hideTabs": false
+    "zenMode.hideTabs": false,
+    "jupyter.insidersChannel": "weekly",
 }
