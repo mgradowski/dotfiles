@@ -1,19 +1,5 @@
 {
     "breadcrumbs.enabled": true,
-    "cSpell.enabled": true,
-    "cSpell.enableFiletypes": [
-        "!latex"
-    ],
-    "cSpell.userWords": [
-        "arange",
-        "centroid's",
-        "cright",
-        "numpy",
-        "pyplot",
-        "rleft",
-        "rright",
-        "sympy"
-    ],
     "editor.cursorBlinking": "expand",
     "editor.fontFamily": "Source Code Pro",
     "editor.minimap.enabled": true,
@@ -26,39 +12,70 @@
         80,
         120
     ],
+    "editor.suggest.insertMode": "replace",
+    "editor.suggest.localityBonus": true,
     "explorer.sortOrder": "type",
     "files.associations": {
+        "*.mkvi": "context",
         "*.pgsql": "sql"
     },
     "files.exclude": {
+        "**/*.olean": true,
         "**/.DS_Store": true,
         "**/.git": true,
         "**/.hg": true,
         "**/.svn": true,
-        "**/*.olean": true,
         "**/CVS": true
     },
     "git.autofetch": true,
     "git.confirmSync": false,
+    "julia.NumThreads": 4,
+    "julia.additionalArgs": [
+        "--threads=4"
+    ],
+    "julia.enableCrashReporter": false,
+    "julia.enableTelemetry": false,
+    "julia.symbolCacheDownload": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
     "python.analysis.completeFunctionParens": true,
     "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.typeCheckingMode": "basic",
     "python.autoComplete.addBrackets": true,
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
-    "python.pythonPath": "/usr/local/opt/python@3.8/bin/python3.8",
-    "terminal.integrated.fontFamily": "Inconsolata",
+    "python.linting.mypyEnabled": true,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.terminal.activateEnvironment": true,
+    "remote.SSH.connectTimeout": 60,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "terminal.integrated.gpuAcceleration": "canvas",
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-q>": true
+    },
     "vim.smartRelativeLine": true,
     "vim.statusBarColorControl": true,
-    "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#141414",
         "statusBar.background": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f"
     },
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "workbench.panel.defaultLocation": "bottom",
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.hideTabs": false,
-    "jupyter.insidersChannel": "weekly",
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "neptune-vscode-local": "linux"
+    }
 }
