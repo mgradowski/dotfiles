@@ -1,9 +1,12 @@
 {
     "breadcrumbs.enabled": true,
-    "editor.cursorBlinking": "expand",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.cursorBlinking": "blink",
     "editor.fontFamily": "Source Code Pro",
+    "editor.fontLigatures": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.inlineSuggest.enabled": true,
     "editor.minimap.enabled": true,
-    "editor.multiCursorModifier": "ctrlCmd",
     "editor.quickSuggestions": true,
     "editor.renderControlCharacters": true,
     "editor.renderLineHighlight": "all",
@@ -14,6 +17,7 @@
     ],
     "editor.suggest.insertMode": "replace",
     "editor.suggest.localityBonus": true,
+    "editor.suggestSelection": "first",
     "explorer.sortOrder": "type",
     "files.associations": {
         "*.mkvi": "context",
@@ -22,60 +26,55 @@
     "files.exclude": {
         "**/*.olean": true,
         "**/.DS_Store": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
         "**/.git": true,
         "**/.hg": true,
+        "**/.project": true,
+        "**/.settings": true,
         "**/.svn": true,
         "**/CVS": true
     },
     "git.autofetch": true,
     "git.confirmSync": false,
-    "julia.NumThreads": 4,
-    "julia.additionalArgs": [
-        "--threads=4"
-    ],
-    "julia.enableCrashReporter": false,
-    "julia.enableTelemetry": false,
-    "julia.symbolCacheDownload": true,
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
+    "github.copilot.enable": {
+        "*": true
     },
+    "problems.showCurrentInStatus": true,
     "python.analysis.completeFunctionParens": true,
     "python.analysis.diagnosticMode": "workspace",
     "python.analysis.typeCheckingMode": "basic",
-    "python.autoComplete.addBrackets": true,
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "python.formatting.provider": "black",
     "python.languageServer": "Pylance",
     "python.linting.mypyEnabled": true,
     "python.pythonPath": "/usr/local/bin/python3",
     "python.terminal.activateEnvironment": true,
+    "redhat.telemetry.enabled": false,
     "remote.SSH.connectTimeout": 60,
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
-    "terminal.integrated.gpuAcceleration": "canvas",
+    "remote.SSH.remotePlatform": {
+        "10.0.1.2": "linux",
+        "anrdb-hadoop": "linux",
+        "neptune-bluenet": "linux",
+        "neptune-local": "linux",
+        "neptune-nyctaxi": "linux",
+        "neptune-vscode": "linux",
+        "neptune-vscode-bluenet": "linux",
+        "neptune-vscode-local": "linux",
+        "nyctaxi-vscode-bluenet": "linux"
+    },
+    "remote.SSH.useLocalServer": false,
+    "terminal.integrated.fontFamily": "Source Code Pro",
     "vim.handleKeys": {
         "<C-d>": true,
         "<C-q>": true
     },
     "vim.smartRelativeLine": true,
-    "vim.statusBarColorControl": true,
-    "workbench.colorCustomizations": {
-        "editor.lineHighlightBackground": "#141414",
-        "statusBar.background": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f"
-    },
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
     "workbench.panel.defaultLocation": "bottom",
+    "workbench.startupEditor": "none",
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
-    "zenMode.hideTabs": false,
-    "remote.SSH.useLocalServer": false,
-    "remote.SSH.remotePlatform": {
-        "neptune-vscode-local": "linux"
-    }
+    "zenMode.hideTabs": false
 }
