@@ -2,7 +2,7 @@
     "breadcrumbs.enabled": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.cursorBlinking": "blink",
-    "editor.fontFamily": "Source Code Pro",
+    "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": false,
     "editor.guides.bracketPairs": "active",
     "editor.inlineSuggest.enabled": true,
@@ -21,7 +21,8 @@
     "explorer.sortOrder": "type",
     "files.associations": {
         "*.mkvi": "context",
-        "*.pgsql": "sql"
+        "*.pgsql": "sql",
+        "ledger": "ledger"
     },
     "files.exclude": {
         "**/*.olean": true,
@@ -38,11 +39,16 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "github.copilot.enable": {
-        "*": true
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": false,
+        "python": false,
+        "beancount": true,
+        "java": true
     },
     "problems.showCurrentInStatus": true,
     "python.analysis.completeFunctionParens": true,
-    "python.analysis.diagnosticMode": "workspace",
     "python.analysis.typeCheckingMode": "basic",
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "python.formatting.provider": "black",
@@ -61,7 +67,8 @@
         "neptune-vscode": "linux",
         "neptune-vscode-bluenet": "linux",
         "neptune-vscode-local": "linux",
-        "nyctaxi-vscode-bluenet": "linux"
+        "nyctaxi-vscode-bluenet": "linux",
+        "bigdata": "linux"
     },
     "remote.SSH.useLocalServer": false,
     "terminal.integrated.fontFamily": "Source Code Pro",
@@ -71,10 +78,55 @@
     },
     "vim.smartRelativeLine": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "GitHub Dark Dimmed",
     "workbench.panel.defaultLocation": "bottom",
     "workbench.startupEditor": "none",
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
-    "zenMode.hideTabs": false
+    "zenMode.hideTabs": false,
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "python.venvPath": "~/Library/Caches/pypoetry/virtualenvs/",
+    "json.schemas": [],
+    "aws.profile": "profile:iam-admin@mgradowski-csaa02-general",
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "shellcheck.customArgs": [
+        "-x"
+    ],
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/home/mgradowski/.vscode-server/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "svelte.enable-ts-plugin": true,
+    "gitlens.advanced.messages": {
+        "suppressCreatePullRequestPrompt": true
+    },
+    "explorer.confirmDragAndDrop": false
 }

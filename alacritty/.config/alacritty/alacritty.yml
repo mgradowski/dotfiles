@@ -3,3 +3,6 @@ cursor:
     blinking: Always
   blink_interval: 150
 
+
+key_bindings:
+  - { key: Space, mods: Control, chars: "\x00" }
