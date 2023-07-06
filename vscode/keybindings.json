@@ -57,15 +57,5 @@
         "key": "shift+tab",
         "command": "selectPrevSuggestion",
         "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
-    },
-    {
-        "key": "escape",
-        "command": "-language-julia.clearCurrentInlineResult",
-        "when": "editorLangId == 'juliamarkdown' || editorTextFocus && juliaHasInlineResult && !editorHasSelection && !findWidgetVisible && !inSnippetMode && !isInEmbeddedEditor && !markerNavigationVisible && !onTypeRenameInputVisible && !parameterHintsVisible && !renameInputVisible && !suggestWidgetVisible && editorLangId == 'julia'"
-    },
-    {
-        "key": "escape",
-        "command": "-language-julia.clearCurrentInlineResult",
-        "when": "editorLangId == 'juliamarkdown' || editorLangId == 'markdown' || editorTextFocus && juliaHasInlineResult && !editorHasSelection && !findWidgetVisible && !inSnippetMode && !isInEmbeddedEditor && !markerNavigationVisible && !onTypeRenameInputVisible && !parameterHintsVisible && !renameInputVisible && !suggestWidgetVisible && editorLangId == 'julia'"
     }
 ]
