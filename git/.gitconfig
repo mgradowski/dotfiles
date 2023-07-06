@@ -1,16 +1,12 @@
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[rerere]
+	enable = true
+
 [user]
 	email = mikolaj.gradowski@hotmail.com
 	name = Mikołaj Gradowski
-
-[pull]
-    rebase = true
-[safe]
-	directory = /workspace/source
-	directory = /workspace/source
-	directory = /workspace/source
-	directory = /workspace/source
-	directory = /workspace/source
-	directory = /workspace/source
-	directory = /workspace/source
-[push]
-	autoSetupRemote = true
