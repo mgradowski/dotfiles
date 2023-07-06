@@ -3,6 +3,14 @@ cursor:
     blinking: Always
   blink_interval: 150
 
+window:
+  padding:
+   x: 8
+   y: 8
 
-key_bindings:
-  - { key: Space, mods: Control, chars: "\x00" }
+  decorations: none
+
+  opacity: 0.9
+
+  startup_mode: Windowed
+  dynamic_title: true
