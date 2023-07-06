@@ -12,3 +12,5 @@
 	directory = /workspace/source
 	directory = /workspace/source
 	directory = /workspace/source
+[push]
+	autoSetupRemote = true
