@@ -4,3 +4,11 @@
 
 [pull]
     rebase = true
+[safe]
+	directory = /workspace/source
+	directory = /workspace/source
+	directory = /workspace/source
+	directory = /workspace/source
+	directory = /workspace/source
+	directory = /workspace/source
+	directory = /workspace/source
