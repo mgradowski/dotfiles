@@ -15,3 +15,44 @@ window:
   startup_mode: Windowed
   dynamic_title: true
   option_as_alt: Both
+
+schemes:
+  themer-night-sky-dark: &dark
+    primary:
+      background: "#13222E"
+      foreground: "#96A8B5"
+    cursor:
+      text: "#13222E"
+      cursor: "#9770B2"
+    selection:
+      text: "#13222E"
+      background: "#4496CD"
+    normal:
+      black: "#3F4F5B"
+      red: "#CA3E5A"
+      green: "#81A559"
+      yellow: "#EBB062"
+      blue: "#4496CD"
+      magenta: "#B35D8D"
+      cyan: "#42ABAB"
+      white: "#96A8B5"
+    bright:
+      black: "#556572"
+      red: "#C45871"
+      green: "#8AAA70"
+      yellow: "#DEB377"
+      blue: "#599ECD"
+      magenta: "#B2709A"
+      cyan: "#57AFB2"
+      white: "#ACBECC"
+    dim:
+      black: "#293845"
+      red: "#A53851"
+      green: "#6B8B50"
+      yellow: "#C09458"
+      blue: "#3A7FAD"
+      magenta: "#93517A"
+      cyan: "#399092"
+      white: "#80919F"
+
+colors: *dark
