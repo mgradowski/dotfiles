@@ -4,3 +4,7 @@
 
 [pull]
     rebase = true
+[rerere]
+	enable = true
+[push]
+	autoSetupRemote = true
