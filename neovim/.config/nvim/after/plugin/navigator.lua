@@ -7,4 +7,3 @@ vim.keymap.set({'n', 't'}, '<C-l>', navigator.right)
 vim.keymap.set({'n', 't'}, '<C-k>', navigator.up)
 vim.keymap.set({'n', 't'}, '<C-j>', navigator.down)
 
-

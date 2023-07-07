@@ -1,4 +1,4 @@
-function deez_colorz(color)
+function DeezColorz(color)
 	color = color or "dracula-soft"
 	vim.cmd.colorscheme(color)
 
@@ -8,5 +8,5 @@ function deez_colorz(color)
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
 end
 
-deez_colorz()
+DeezColorz()
 
