@@ -37,3 +37,16 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
+
+require("mason-null-ls").setup({
+	ensure_installed = { "isort", "black", "autoflake" }
+})
+
+local null_ls = require("null-ls")
+local sources = {
+	null_ls.builtins.formatting.autoflake,
+	null_ls.builtins.formatting.isort,
+	null_ls.builtins.formatting.black,
+}
+
+null_ls.setup({ sources = sources })
