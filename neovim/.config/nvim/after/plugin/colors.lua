@@ -8,6 +8,7 @@ function DeezColorz(color)
     vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
     vim.api.nvim_set_hl(0, "VirtColumn", { fg = "#3A444F" })
+    vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { fg = "#3A444F" })
 end
 
 DeezColorz()
