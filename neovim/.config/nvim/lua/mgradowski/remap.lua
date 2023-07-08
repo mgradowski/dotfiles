@@ -34,3 +34,6 @@ vim.cmd("cabb wq write<bar>silent! close")
 
 -- Replace the word under the cursor across the current buffer
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- tmux sesionizer on Ctrl+f
+vim.keymap.set("n", "<C-b>", "<cmd>silent !tmux neww fish -c tmux_sessionizer<CR>")
