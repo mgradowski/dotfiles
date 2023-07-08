@@ -51,4 +51,6 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/nvim-treesitter-context'
 
     use "lukas-reineke/virt-column.nvim"
+
+    use 'f-person/git-blame.nvim'
 end)
