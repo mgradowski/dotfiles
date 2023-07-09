@@ -7,6 +7,10 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Don't exit visual mode on indent
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+
 -- Keep cursor position after joining the next line
 vim.keymap.set("n", "J", "mzJ`z")
 
