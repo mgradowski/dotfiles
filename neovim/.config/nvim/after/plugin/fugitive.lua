@@ -1,10 +1,14 @@
 -- Toggle fugitive
 vim.keymap.set("n", "<leader>gs", function()
-    local bufname = vim.fn.bufname('fugitive:///*/.git//$')
+    local bufname = vim.fn.bufname('fugitive:///*')
     if vim.fn.buflisted(bufname) ~= 0 then
-        vim.cmd [[execute ":bdelete" bufname('fugitive:///*/.git//$')]]
+        vim.cmd [[execute ":bdelete" bufname('fugitive:///*')]]
     else
-        vim.cmd.Git()
+        if vim.fn.FugitiveHead() ~= '' then
+            vim.cmd [[
+                Git
+            ]]
+        end
     end
 end)
 
