@@ -55,4 +55,6 @@ return require('packer').startup(function(use)
     use 'f-person/git-blame.nvim'
 
     use 'numToStr/Comment.nvim'
+
+    use 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git'
 end)
