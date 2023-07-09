@@ -57,4 +57,6 @@ return require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
 
     use 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git'
+
+    use 'windwp/nvim-autopairs'
 end)
