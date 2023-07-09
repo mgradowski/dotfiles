@@ -53,4 +53,6 @@ return require('packer').startup(function(use)
     use "lukas-reineke/virt-column.nvim"
 
     use 'f-person/git-blame.nvim'
+
+    use 'numToStr/Comment.nvim'
 end)
