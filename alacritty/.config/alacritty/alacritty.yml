@@ -56,3 +56,6 @@ schemes:
       white: "#80919F"
 
 colors: *dark
+
+key_bindings:
+  - { key: Slash,   mods: Control,       chars: "\x1f"     }
