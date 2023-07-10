@@ -9,12 +9,12 @@ function tmux_sessionizer
     set tmux_running (pgrep tmux)
 
     if test -z $TMUX  && test -z $tmux_running
-        tmux new-session -s $selected_name -c $selected
+        tmux new-session -s $selected_name -c $selected -e TMUX_SESSIONIZER=1
         exit 0
     end
 
     if ! tmux has-session -t=$selected_name 2> /dev/null
-        tmux new-session -ds $selected_name -c $selected
+        tmux new-session -ds $selected_name -c $selected -e TMUX_SESSIONIZER=1 
     end
 
     tmux switch-client -t $selected_name
