@@ -23,5 +23,5 @@ vim.keymap.set("n", "<leader>gs", function()
 end)
 
 vim.keymap.set("n", "<leader>gf", function()
-    vim.cmd [[ Git fetch -v ]]
+    vim.cmd [[ Git fetch ]]
 end)
