@@ -46,6 +46,27 @@ vim.keymap.set("n", "<C-b>", "<cmd>silent !tmux neww fish -c tmux_sessionizer<CR
 vim.keymap.set("n", "<leader>gg", "<cmd>silent !tmux neww git g<CR>")
 vim.keymap.set("n", "<leader>ga", "<cmd>silent !tmux neww git ga<CR>")
 
--- Poor man's tabout
-vim.keymap.set("i", "<Tab>", "<Right>")
-vim.keymap.set("i", "<S-Tab>", "<Left>")
+-- tabout replacement developed at CERN (element number 119)
+vim.keymap.set("i", "<Tab>", function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local line_length = string.len(vim.api.nvim_buf_get_lines(0, line - 1, line, false)[1])
+
+    if col >= line_length then
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Enter>", true, true, true), "n", true)
+    else
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, true, true), "n", true)
+    end
+end, { silent = true })
+
+vim.keymap.set("i", "<S-Tab>", function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local current_line = vim.api.nvim_buf_get_lines(0, line - 1, line, false)[1]
+    local first_non_blank = string.find(current_line, "%S")
+
+    if col == 0 or (first_non_blank ~= nil and col <= first_non_blank - 1) then
+        vim.cmd [[normal! kA]]
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, true, true), "n", true)
+    else
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left>", true, true, true), "n", true)
+    end
+end, { silent = true })
