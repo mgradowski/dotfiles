@@ -45,3 +45,7 @@ vim.keymap.set("n", "<C-b>", "<cmd>silent !tmux neww fish -c tmux_sessionizer<CR
 -- git graph
 vim.keymap.set("n", "<leader>gg", "<cmd>silent !tmux neww git g<CR>")
 vim.keymap.set("n", "<leader>ga", "<cmd>silent !tmux neww git ga<CR>")
+
+-- Poor man's tabout
+vim.keymap.set("i", "<Tab>", "<Right>")
+vim.keymap.set("i", "<S-Tab>", "<Left>")
