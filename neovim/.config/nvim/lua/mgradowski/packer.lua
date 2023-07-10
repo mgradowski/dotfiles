@@ -59,4 +59,6 @@ return require('packer').startup(function(use)
     use 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git'
 
     use 'windwp/nvim-autopairs'
+
+    use "lukas-reineke/indent-blankline.nvim"
 end)

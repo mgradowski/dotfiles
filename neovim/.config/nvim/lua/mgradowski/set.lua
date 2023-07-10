@@ -24,4 +24,4 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.cursorline = true
 
-vim.g.mapleader = " "
+vim.g.termguicolors = false

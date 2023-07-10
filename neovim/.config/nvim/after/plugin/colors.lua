@@ -10,6 +10,7 @@ function DeezColorz(color)
     vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
     vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { fg = "#3A444F" })
     vim.api.nvim_set_hl(0, "VirtColumn", { fg = "#3A444F" })
+    vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#3A444F" })
 end
 
 DeezColorz()
