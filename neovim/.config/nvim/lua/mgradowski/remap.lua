@@ -52,7 +52,8 @@ vim.keymap.set("i", "<Tab>", function()
     local line_length = string.len(vim.api.nvim_buf_get_lines(0, line - 1, line, false)[1])
 
     if col >= line_length then
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Enter>", true, true, true), "n", true)
+        vim.cmd [[ normal! j^ ]]
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left>", true, true, true), "n", true)
     else
         vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, true, true), "n", true)
     end
