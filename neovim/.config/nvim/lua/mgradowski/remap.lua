@@ -14,6 +14,14 @@ vim.keymap.set("v", "<", "<gv")
 -- Keep cursor position after joining the next line
 vim.keymap.set("n", "J", "mzJ`z")
 
+-- Move vertically by visual line (easier navigation around wrapped lines)
+vim.keymap.set("n", "k", "gk")
+vim.keymap.set("n", "j", "gj")
+
+-- Easier jumping to start/end of the line
+vim.keymap.set("n", "E", "$")
+vim.keymap.set("n", "B", "^")
+
 -- Keep cursor in the middle of the screen after Ctrl+u and Ctrl+d
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
