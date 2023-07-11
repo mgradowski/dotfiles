@@ -25,3 +25,5 @@ vim.opt.colorcolumn = "80"
 vim.opt.cursorline = true
 
 vim.g.termguicolors = false
+
+vim.opt.showmode = false

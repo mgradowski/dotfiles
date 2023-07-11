@@ -61,4 +61,11 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
 
     use "lukas-reineke/indent-blankline.nvim"
+
+    use 'mhinz/vim-signify'
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 end)
