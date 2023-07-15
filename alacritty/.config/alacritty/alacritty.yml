@@ -55,7 +55,9 @@ schemes:
       cyan: "#399092"
       white: "#80919F"
 
-colors: *dark
+colors:
+  <<: *dark
+  transparent_background_colors: true
 
 key_bindings:
   - { key: Slash,   mods: Control,       chars: "\x1f"     }
