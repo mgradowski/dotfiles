@@ -54,6 +54,9 @@ vim.keymap.set("n", "<C-b>", "<cmd>silent !tmux neww fish -c tmux_sessionizer<CR
 vim.keymap.set("n", "<leader>gg", "<cmd>silent !tmux neww git g<CR>")
 vim.keymap.set("n", "<leader>ga", "<cmd>silent !tmux neww git ga<CR>")
 
+-- Jump buffer forward
+vim.keymap.set("n", "<leader><C-o>", "<C-i>")
+
 -- tabout replacement developed at CERN (element number 119)
 vim.keymap.set("i", "<Tab>", function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
