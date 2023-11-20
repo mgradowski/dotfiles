@@ -14,27 +14,29 @@ local cmp = require('cmp')
 lsp.defaults.cmp_mappings({
     ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-k>'] = cmp.mapping.confirm({ select = true }),
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = true }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("i", "<C-k>", cmp.mapping.confirm({ select = true }), opts)
+
     lsp.buffer_autoformat()
 end)
 
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+local lspconfig = require('lspconfig');
+
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
 
@@ -52,20 +54,20 @@ local sources = {
 null_ls.setup({ sources = sources })
 
 
-function is_helm_file(path)
+local function is_helm_file(path)
     local check = vim.fs.find("Chart.yaml", { path = vim.fs.dirname(path), upward = true })
     return not vim.tbl_isempty(check)
 end
 
-function yaml_filetype(path, bufname)
+local function yaml_filetype(path, _)
     return is_helm_file(path) and "helm.yaml" or "yaml"
 end
 
-function tmpl_filetype(path, bufname)
+local function tmpl_filetype(path, _)
     return is_helm_file(path) and "helm.tmpl" or "template"
 end
 
-function tpl_filetype(path, bufname)
+local function tpl_filetype(path, _)
     return is_helm_file(path) and "helm.tmpl" or "smarty"
 end
 
