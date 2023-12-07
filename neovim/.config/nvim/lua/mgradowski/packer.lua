@@ -70,4 +70,13 @@ return require('packer').startup(function(use)
     }
 
     use 'towolf/vim-helm'
+
+    use 'vimwiki/vimwiki'
+
+    use {
+        'tools-life/taskwiki',
+        setup = function()
+            os.execute("python3 -m pip install tasklib pynvim")
+        end
+    }
 end)
