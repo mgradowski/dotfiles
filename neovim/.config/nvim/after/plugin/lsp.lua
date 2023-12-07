@@ -34,11 +34,11 @@ lsp.on_attach(function(_, bufnr)
     lsp.buffer_autoformat()
 end)
 
+lsp.setup()
+
 local lspconfig = require('lspconfig');
 
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-
-lsp.setup()
 
 require("mason-null-ls").setup({
     ensure_installed = { "isort", "black", "autoflake" }
@@ -59,8 +59,19 @@ local function is_helm_file(path)
     return not vim.tbl_isempty(check)
 end
 
+local function is_ansible_file(path)
+    local check = vim.fs.find("ansible.cfg", { path = vim.fs.dirname(path), upward = true })
+    return not vim.tbl_isempty(check)
+end
+
 local function yaml_filetype(path, _)
-    return is_helm_file(path) and "helm.yaml" or "yaml"
+    if is_helm_file(path) then
+        return "helm.yaml"
+    elseif is_ansible_file(path) then
+        return "yaml.ansible"
+    else
+        return "yaml"
+    end
 end
 
 local function tmpl_filetype(path, _)
@@ -76,7 +87,8 @@ vim.filetype.add({
         yaml = yaml_filetype,
         yml = yaml_filetype,
         tmpl = tmpl_filetype,
-        tpl = tpl_filetype
+        tpl = tpl_filetype,
+        tf = "terraform",
     },
     filename = {
         ["Chart.yaml"] = "yaml",
