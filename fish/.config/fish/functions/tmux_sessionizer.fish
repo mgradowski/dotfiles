@@ -1,5 +1,5 @@
 function tmux_sessionizer
-    set selected (find ~/projects -mindepth 1 -maxdepth 1 -type d | awk 'BEGIN { print "'$HOME'/dotfiles"; print"'$HOME'" } { print $0 }' | fzf)
+    set selected (find ~/projects -mindepth 1 -maxdepth 1 -type d | awk 'BEGIN { print "'$HOME'/vimwiki"; print "'$HOME'/dotfiles"; print"'$HOME'" } { print $0 }' | fzf)
 
     if test -z $selected
         exit 0
