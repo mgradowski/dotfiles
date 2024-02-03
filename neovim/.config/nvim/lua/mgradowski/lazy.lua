@@ -15,7 +15,7 @@ require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
 
     { 'Mofiqul/dracula.nvim' },
@@ -25,9 +25,10 @@ require('lazy').setup({
         build = ':TSUpdate'
     },
 
-    { 'nvim-lua/plenary.nvim' },
-
-    { 'ThePrimeagen/harpoon' },
+    {
+        'ThePrimeagen/harpoon',
+        dependencies = {  'nvim-lua/plenary.nvim' }
+    },
 
     { 'mbbill/undotree' },
 
