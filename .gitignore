@@ -2,4 +2,5 @@
 *.spotify_token_cache.json
 neovim/.config/nvim/plugin/packer_compiled.lua
 .taskrc
+spotify-tui
 
