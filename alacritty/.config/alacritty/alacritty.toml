@@ -19,7 +19,6 @@ mods = "Control"
 decorations = "none"
 dynamic_title = true
 opacity = 0.9
-option_as_alt = "Both"
 startup_mode = "Windowed"
 
 [window.padding]
