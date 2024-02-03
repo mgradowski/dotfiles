@@ -1,48 +1,6 @@
 [colors]
 transparent_background_colors = true
 
-[colors."<<".bright]
-black = "#556572"
-blue = "#599ECD"
-cyan = "#57AFB2"
-green = "#8AAA70"
-magenta = "#B2709A"
-red = "#C45871"
-white = "#ACBECC"
-yellow = "#DEB377"
-
-[colors."<<".cursor]
-cursor = "#9770B2"
-text = "#13222E"
-
-[colors."<<".dim]
-black = "#293845"
-blue = "#3A7FAD"
-cyan = "#399092"
-green = "#6B8B50"
-magenta = "#93517A"
-red = "#A53851"
-white = "#80919F"
-yellow = "#C09458"
-
-[colors."<<".normal]
-black = "#3F4F5B"
-blue = "#4496CD"
-cyan = "#42ABAB"
-green = "#81A559"
-magenta = "#B35D8D"
-red = "#CA3E5A"
-white = "#96A8B5"
-yellow = "#EBB062"
-
-[colors."<<".primary]
-background = "#13222E"
-foreground = "#96A8B5"
-
-[colors."<<".selection]
-background = "#4496CD"
-text = "#13222E"
-
 [cursor]
 blink_interval = 150
 
@@ -56,48 +14,6 @@ size = 11
 chars = "\u001F"
 key = "Slash"
 mods = "Control"
-
-[schemes.themer-night-sky-dark.bright]
-black = "#556572"
-blue = "#599ECD"
-cyan = "#57AFB2"
-green = "#8AAA70"
-magenta = "#B2709A"
-red = "#C45871"
-white = "#ACBECC"
-yellow = "#DEB377"
-
-[schemes.themer-night-sky-dark.cursor]
-cursor = "#9770B2"
-text = "#13222E"
-
-[schemes.themer-night-sky-dark.dim]
-black = "#293845"
-blue = "#3A7FAD"
-cyan = "#399092"
-green = "#6B8B50"
-magenta = "#93517A"
-red = "#A53851"
-white = "#80919F"
-yellow = "#C09458"
-
-[schemes.themer-night-sky-dark.normal]
-black = "#3F4F5B"
-blue = "#4496CD"
-cyan = "#42ABAB"
-green = "#81A559"
-magenta = "#B35D8D"
-red = "#CA3E5A"
-white = "#96A8B5"
-yellow = "#EBB062"
-
-[schemes.themer-night-sky-dark.primary]
-background = "#13222E"
-foreground = "#96A8B5"
-
-[schemes.themer-night-sky-dark.selection]
-background = "#4496CD"
-text = "#13222E"
 
 [window]
 decorations = "none"
