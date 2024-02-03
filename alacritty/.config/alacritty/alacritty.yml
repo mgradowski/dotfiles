@@ -2,7 +2,6 @@ cursor:
   style:
     blinking: Always
   blink_interval: 150
-
 window:
   padding:
    x: 16
@@ -15,6 +14,9 @@ window:
   startup_mode: Windowed
   dynamic_title: true
   option_as_alt: Both
+
+font:
+  size: 11
 
 schemes:
   themer-night-sky-dark: &dark
@@ -55,9 +57,13 @@ schemes:
       cyan: "#399092"
       white: "#80919F"
 
+
 colors:
   <<: *dark
   transparent_background_colors: true
 
 key_bindings:
-  - { key: Slash,   mods: Control,       chars: "\x1f"     }
+ - key: Slash
+   mods: Control
+   chars: "\x1f"
+#
