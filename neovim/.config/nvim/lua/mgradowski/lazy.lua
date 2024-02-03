@@ -76,5 +76,10 @@ require('lazy').setup({
 
     { 'towolf/vim-helm' },
 
-    { 'vimwiki/vimwiki' }
+    { 'vimwiki/vimwiki' },
+
+    {
+        'echasnovski/mini.files',
+        version = '*'
+    }
 })
