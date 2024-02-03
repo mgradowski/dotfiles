@@ -78,5 +78,15 @@ require('lazy').setup({
     {
         'echasnovski/mini.files',
         version = '*'
+    },
+
+    {
+        'echasnovski/mini.animate',
+        version = '*'
+    },
+
+    {
+        'echasnovski/mini.cursorword',
+        version = '*'
     }
 })
