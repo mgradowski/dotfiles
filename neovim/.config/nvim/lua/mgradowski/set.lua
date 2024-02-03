@@ -27,3 +27,5 @@ vim.opt.cursorline = true
 vim.g.termguicolors = false
 
 vim.opt.showmode = false
+
+vim.opt.linebreak = true
