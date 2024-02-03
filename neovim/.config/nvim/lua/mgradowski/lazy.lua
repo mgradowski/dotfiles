@@ -25,8 +25,6 @@ require('lazy').setup({
         build = ':TSUpdate'
     },
 
-    { 'nvim-treesitter/playground' },
-
     { 'nvim-lua/plenary.nvim' },
 
     { 'ThePrimeagen/harpoon' },
