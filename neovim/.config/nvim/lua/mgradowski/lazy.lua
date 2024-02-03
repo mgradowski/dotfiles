@@ -27,10 +27,8 @@ require('lazy').setup({
 
     {
         'ThePrimeagen/harpoon',
-        dependencies = {  'nvim-lua/plenary.nvim' }
+        dependencies = { 'nvim-lua/plenary.nvim' }
     },
-
-    { 'mbbill/undotree' },
 
     { 'numToStr/Navigator.nvim' },
 
@@ -74,8 +72,6 @@ require('lazy').setup({
     { 'mhinz/vim-signify' },
 
     { 'nvim-lualine/lualine.nvim' },
-
-    { 'towolf/vim-helm' },
 
     { 'vimwiki/vimwiki' },
 
