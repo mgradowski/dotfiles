@@ -88,5 +88,12 @@ require('lazy').setup({
     {
         'echasnovski/mini.cursorword',
         version = '*'
+    },
+
+    {
+        'lambdalisue/suda.vim',
+        init = function()
+            vim.g.suda_smart_edit = 1
+        end
     }
 })
