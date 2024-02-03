@@ -19,14 +19,6 @@ vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "E", "$")
 vim.keymap.set("n", "B", "^")
 
--- Keep cursor in the middle of the screen after Ctrl+u and Ctrl+d
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
--- Keep search results in the middle of the screen
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
 -- Keep paste buffer after overwrite
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
