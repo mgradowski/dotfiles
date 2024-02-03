@@ -10,4 +10,11 @@ minianimate.setup({
     close = {
         enable = false
     },
+    cursor = {
+        enable = false
+    },
+    scroll = {
+        enable = true,
+        timing = minianimate.gen_timing.linear({ duration = 100, unit = 'total' }),
+    },
 })
