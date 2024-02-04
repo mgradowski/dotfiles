@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd(
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
             vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set("n", "<leader>vrr", telescope_builtin.lsp_references, opts)
-            vim.keymap.set("n", "<leader>vws", telescope_builtin.lsp_workspace_symbols, opts)
+            vim.keymap.set("n", "<leader>vws", telescope_builtin.lsp_dynamic_workspace_symbols, opts)
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
         end
     }
