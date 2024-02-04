@@ -93,4 +93,6 @@ require('lazy').setup({
     },
 
     { 'folke/neodev.nvim' },
+
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 })
