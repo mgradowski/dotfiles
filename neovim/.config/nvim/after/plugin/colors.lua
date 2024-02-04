@@ -12,6 +12,7 @@ function DeezColorz(color)
     vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#3A444F" })
     vim.api.nvim_set_hl(0, "DiffAdd", { fg = "#87e58e" })
     vim.api.nvim_set_hl(0, "Cursorline", { bg = "#313131" })
+    vim.cmd [[ highlight Comment gui=italic ]]
 end
 
 DeezColorz()
