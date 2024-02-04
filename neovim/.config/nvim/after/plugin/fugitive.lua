@@ -1,3 +1,5 @@
+local minifiles = require("mini.files")
+
 -- Toggle fugitive
 vim.keymap.set("n", "<leader>gs", function()
     local fugitive_bufnr = nil
@@ -16,6 +18,8 @@ vim.keymap.set("n", "<leader>gs", function()
         vim.cmd [[execute ":bdelete" bufname('fugitive:///*')]]
     else
         if vim.fn.FugitiveHead() ~= '' then
+            minifiles.close()
+
             vim.cmd [[
                 Git
             ]]
