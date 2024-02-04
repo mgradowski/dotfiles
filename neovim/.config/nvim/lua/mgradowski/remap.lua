@@ -49,3 +49,8 @@ vim.keymap.set("n", "<leader><C-o>", "<C-i>")
 -- tabout replacement developed at CERN (element number 119)
 vim.keymap.set("i", "<C-b>", "<Left>")
 vim.keymap.set("i", "<C-f>", "<Right>")
+
+-- Diagnostics
+vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)

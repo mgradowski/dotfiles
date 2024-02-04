@@ -34,11 +34,6 @@ require('lazy').setup({
 
     { 'tpope/vim-fugitive' },
 
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x'
-    },
-
     { "williamboman/mason.nvim" },
 
     { "williamboman/mason-lspconfig.nvim" },
