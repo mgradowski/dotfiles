@@ -5,6 +5,7 @@ local luasnip = require("luasnip")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local mason_null_ls = require("mason-null-ls")
+local neodev = require("neodev")
 local null_ls = require("null-ls")
 
 
@@ -16,7 +17,6 @@ vim.api.nvim_create_autocmd(
 
             vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-            vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
             vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
@@ -37,6 +37,8 @@ vim.api.nvim_create_autocmd(
 )
 
 
+neodev.setup({})
+
 mason.setup({})
 mason_lspconfig.setup({
     ensure_installed = {
@@ -55,26 +57,6 @@ mason_lspconfig.setup({
                 capabilities = cmp_nvim_lsp.default_capabilities(),
             })
         end,
-
-        -- Neovim Lua config
-        lua_ls = function()
-            lspconfig.lua_ls.setup({
-                capabilities = cmp_nvim_lsp.default_capabilities(),
-                settings = {
-                    Lua = {
-                        runtime = {
-                            version = 'LuaJIT'
-                        },
-                        diagnostics = {
-                            globals = { 'vim' },
-                        },
-                        workspace = {
-                            library = { vim.env.VIMRUNTIME, }
-                        }
-                    }
-                }
-            })
-        end
     },
 })
 
@@ -97,11 +79,8 @@ cmp.setup({
 })
 
 mason_null_ls.setup({
-    ensure_installed = {
-        "autoflake",
-        "black",
-        "isort",
-    }
+    automatic_installation = true,
+    ensure_installed = {},
 })
 
 null_ls.setup({
