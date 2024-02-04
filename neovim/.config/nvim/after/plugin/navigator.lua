@@ -1,5 +1,6 @@
 local navigator = require('Navigator')
 
+---@diagnostic disable-next-line: missing-parameter
 navigator.setup()
 
 vim.keymap.set({ 'n', 't' }, '<C-h>', navigator.left)

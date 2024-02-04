@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader>gs", function()
     local fugitive_bufnr = nil
 
     -- Find the buffer number of the fugitive buffer
+    ---@diagnostic disable-next-line: param-type-mismatch
     for bufnr = 1, vim.fn.bufnr("$") do
         if vim.fn.bufname(bufnr):find('fugitive://') then
             fugitive_bufnr = bufnr
