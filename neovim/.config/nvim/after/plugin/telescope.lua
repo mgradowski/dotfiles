@@ -28,7 +28,7 @@ telescope.setup {
     },
 }
 
-telescope.load_extension("fzf")
+-- telescope.load_extension("fzf")
 
 vim.keymap.set('n', '<leader>ps', function()
     minifiles.close()

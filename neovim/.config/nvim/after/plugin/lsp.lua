@@ -44,13 +44,13 @@ neodev.setup({})
 mason.setup({})
 mason_lspconfig.setup({
     ensure_installed = {
-        "bashls",
-        "gopls",
-        "jsonls",
-        "lua_ls",
-        "pyright",
-        "tsserver",
-        "yamlls",
+        -- "bashls",
+        -- "gopls",
+        -- "jsonls",
+        -- "lua_ls",
+        -- "pyright",
+        -- "tsserver",
+        -- "yamlls",
     },
     handlers = {
         -- default handler
@@ -60,6 +60,18 @@ mason_lspconfig.setup({
             })
         end,
     },
+})
+
+lspconfig.lua_ls.setup({
+    autostart = true,
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    cmd = { vim.fn.exepath("lua-language-server") },
+})
+
+lspconfig.nixd.setup({
+    autostart = true,
+    capabilities = cmp_nvim_lsp.default_capabilities(),
+    cmd = { vim.fn.exepath("nixd") },
 })
 
 cmp.setup({
