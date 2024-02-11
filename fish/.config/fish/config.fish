@@ -35,7 +35,11 @@ alias va 'source (find . | grep -F bin/activate.fish | head -n1)'
 alias da 'deactivate'
 alias vinit 'python3 -m venv .venv'
 alias reload_fish_config 'source "$__fish_config_dir/config.fish"'
-alias duu 'du -ah . | sort -h'
+
+if type -q wormhole
+    alias ws 'wormhole snd'
+    alias wr 'wormhole receive'
+end
 if type -q clear && type -q neofetch
     alias cn 'clear;neofetch'
 end
