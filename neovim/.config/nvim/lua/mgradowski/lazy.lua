@@ -85,9 +85,6 @@ require('lazy').setup({
 
     {
         'lambdalisue/suda.vim',
-        init = function()
-            vim.g.suda_smart_edit = 1
-        end
     },
 
     { 'folke/neodev.nvim' },
