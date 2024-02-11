@@ -32,8 +32,6 @@ require('lazy').setup({
 
     { 'numToStr/Navigator.nvim' },
 
-    { 'tpope/vim-fugitive' },
-
     { "williamboman/mason.nvim" },
 
     { "williamboman/mason-lspconfig.nvim" },
@@ -95,4 +93,13 @@ require('lazy').setup({
     { 'folke/neodev.nvim' },
 
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
+            "nvim-telescope/telescope.nvim",
+        }
+    },
 })
