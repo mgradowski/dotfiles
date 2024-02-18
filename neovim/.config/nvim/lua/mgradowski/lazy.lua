@@ -101,4 +101,6 @@ require('lazy').setup({
     },
 
     { "kylechui/nvim-surround" },
+
+    { "abecodes/tabout.nvim" },
 })
