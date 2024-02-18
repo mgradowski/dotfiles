@@ -99,4 +99,6 @@ require('lazy').setup({
             "nvim-telescope/telescope.nvim",
         }
     },
+
+    { "kylechui/nvim-surround" },
 })
