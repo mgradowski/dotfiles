@@ -29,3 +29,6 @@ vim.o.termguicolors = true
 vim.opt.showmode = false
 
 vim.opt.linebreak = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
