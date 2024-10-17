@@ -32,3 +32,9 @@ vim.opt.linebreak = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+    command = "if mode() != 'c' | checktime | endif",
+    pattern = { "*" },
+})
