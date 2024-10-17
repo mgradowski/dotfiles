@@ -82,7 +82,11 @@ cmp.setup({
 
 mason_null_ls.setup({
     automatic_installation = true,
-    ensure_installed = {},
+    ensure_installed = {
+        "autoflake",
+        "black",
+        "isort",
+    },
 })
 
 null_ls.setup({
