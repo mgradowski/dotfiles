@@ -60,8 +60,21 @@ if type -q direnv
     direnv hook fish | source
 end
 
+function pause_venv_hook
+    mkdir -p ~/.local/state/venv_hook
+    touch ~/.local/state/venv_hook/paused
+end
+
+function unpause_venv_hook
+    rm -f ~/.local/state/venv_hook/paused
+end
+
 if type -q poetry
     function venv_hook --on-event fish_prompt
+        if test -f ~/.local/state/venv_hook/paused
+            return
+        end
+
         # Search for a Poetry pyproject.toml in $PWD and all parents.
         set -l search_dir (pwd)
         while test "$search_dir" != "/"
