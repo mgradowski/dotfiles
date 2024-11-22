@@ -49,7 +49,6 @@ mason_lspconfig.setup({
         "jsonls",
         "lua_ls",
         "pyright",
-        "tsserver",
         "yamlls",
     },
     handlers = {
@@ -60,6 +59,12 @@ mason_lspconfig.setup({
             })
         end,
     },
+})
+
+lspconfig.beancount.setup({
+    init_options = {
+        journal_file = vim.fn.expand("~/projects/ledger/main.bean")
+    }
 })
 
 cmp.setup({
