@@ -102,3 +102,9 @@ null_ls.setup({
         null_ls.builtins.formatting.isort,
     }
 })
+
+vim.filetype.add({
+    extension = {
+        bean = 'beancount',
+    }
+})
