@@ -1,6 +1,7 @@
 local function insert_date()
     local buf = 0;
-    local previous_line = vim.fn.line('.') - 1
+    local current_line = vim.fn.line('.')
+    local previous_line = current_line - 1
     local strict_indexing = false
 
     vim.api.nvim_buf_set_lines(
@@ -8,8 +9,13 @@ local function insert_date()
         previous_line,
         previous_line,
         strict_indexing,
-        { "[" .. os.date("%Y-%m-%d %H:%M") .. "]" }
+        {
+            tostring(os.date("%Y-%m-%d %H:%M")),
+            '',
+        }
     )
+
+    vim.cmd([[ execute "normal ]] .. current_line .. [[gggcc\<C-o>" ]]);
 end
 
 vim.api.nvim_create_autocmd("FileType", {
