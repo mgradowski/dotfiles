@@ -41,7 +41,16 @@ require('lazy').setup({
 
     { 'hrsh7th/nvim-cmp' },
 
-    { 'L3MON4D3/LuaSnip' },
+    { "rafamadriz/friendly-snippets" },
+
+    {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+    },
+
+    { 'saadparwaiz1/cmp_luasnip' },
 
     { 'jose-elias-alvarez/null-ls.nvim' },
 
@@ -97,4 +106,5 @@ require('lazy').setup({
     { "kylechui/nvim-surround" },
 
     { "abecodes/tabout.nvim" },
+
 })
