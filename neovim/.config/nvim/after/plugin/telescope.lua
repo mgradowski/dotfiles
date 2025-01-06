@@ -29,6 +29,7 @@ telescope.setup {
 }
 
 telescope.load_extension("fzf")
+telescope.load_extension("dap")
 
 vim.keymap.set('n', '<leader>ps', function()
     minifiles.close()
@@ -59,4 +60,8 @@ end, {})
 vim.keymap.set('n', '<leader>k', function()
     minifiles.close()
     builtin.keymaps()
+end, {})
+vim.keymap.set('n', '<leader>ds', function()
+    minifiles.close()
+    telescope.extensions.dap.frames()
 end, {})

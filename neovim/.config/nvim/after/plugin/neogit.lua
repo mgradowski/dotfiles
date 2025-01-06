@@ -16,19 +16,10 @@ vim.keymap.set("n", "<leader>gs", function()
         end
     end
 
-    -- If the fugitive buffer is listed, delete it. Otherwise, open it.
     if neogit_bufnr then
         vim.cmd [[ execute ":bdelete" bufname('fugitive:///*') ]]
     else
         minifiles.close()
         vim.cmd [[ Neogit ]]
     end
-end)
-
-vim.keymap.set("n", "<leader>gf", function()
-    vim.cmd [[ !git fetch ]]
-end)
-
-vim.keymap.set("n", "<leader>gp", function()
-    vim.cmd [[ !git pull --autostash --rebase ]]
 end)
