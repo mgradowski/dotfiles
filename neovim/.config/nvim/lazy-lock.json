@@ -23,7 +23,6 @@
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "mini.cursorword": { "branch": "main", "commit": "7d1b38a17834acbbc4feff8e42aedc4ed0c6ff06" },
   "mini.files": { "branch": "main", "commit": "a3a9cce82115a69dba161ac45bda16f4e606f73b" },
-  "neogit": { "branch": "master", "commit": "9ea60f79e370d8f4847efc145e53afe4b0613fc1" },
   "none-ls.nvim": { "branch": "main", "commit": "20f5650988cd849e18c7f3d2dce4b0e6a260e126" },
   "nvim-autopairs": { "branch": "master", "commit": "b464658e9b880f463b9f7e6ccddd93fb0013f559" },
   "nvim-cmp": { "branch": "main", "commit": "5a9ad0d88b3982ce7c67bfef8d805f8aafc88385" },

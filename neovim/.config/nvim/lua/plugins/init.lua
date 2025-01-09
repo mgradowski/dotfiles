@@ -5,7 +5,8 @@ return {
             "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
             "nvim-telescope/telescope.nvim",
-        }
+        },
+        dir = "~/projects/neogit/",
     },
     "abecodes/tabout.nvim",
     {
