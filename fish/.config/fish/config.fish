@@ -69,56 +69,32 @@ function unpause_venv_hook
     rm -f ~/.local/state/venv_hook/paused
 end
 
-if type -q poetry
-    function venv_hook --on-event fish_prompt
-        if test -f ~/.local/state/venv_hook/paused
-            return
-        end
-
-        # Search for a Poetry pyproject.toml in $PWD and all parents.
-        set -l search_dir (pwd)
-        while test "$search_dir" != "/"
-            if grep -qs "tool.poetry" "$search_dir/pyproject.toml" || test -d "$search_dir/.venv"
-                break
-            end
-            set search_dir (dirname "$search_dir")
-        end
-
-        # Deactivate if left a python project subtree.
-        if test "$search_dir" = "/"
-            type -q deactivate && echo "venv: deactivating $VIRTUAL_ENV" && deactivate
-            return
-        end
-
-        set -l is_poetry
-        if grep -qs "tool.poetry" "$search_dir/pyproject.toml"
-            set is_poetry 1
-        end
-
-        # Poetry is really stubborn when asked about an environment, while
-        # we're inside another environment...
-        set -l venv_path
-        if test -n "$is_poetry"
-            set -l VIRTUAL_ENV
-            set venv_path (poetry env info --path)
-        else
-            set venv_path "$search_dir/.venv"
-        end;
-
-        # Found a Poetry project but no venv created yet.
-        if test -z "$venv_path"
-            poetry show > /dev/null
-            set venv_path (poetry env info --path)
-        end
-
-        # Still inside a previously activated environment.
-        if test "$venv_path" = "$VIRTUAL_ENV"
-            return
-        end
-
-        type -q deactivate && echo "venv: deactivating $VIRTUAL_ENV" && deactivate
-        source "$venv_path/bin/activate.fish"
-        echo "venv: activating $venv_path"
+function venv_hook --on-event fish_prompt
+    if test -f ~/.local/state/venv_hook/paused
+        return
     end
+
+    # Search for .venv in $PWD and parents recursively.
+    set -l search_dir (pwd)
+    while test "$search_dir" != "/" && not test -d "$search_dir/.venv"
+        set search_dir (dirname "$search_dir")
+    end
+
+    # Deactivate if left a python project subtree.
+    if test "$search_dir" = "/"
+        type -q deactivate && echo "venv: deactivating $VIRTUAL_ENV" && deactivate
+        return
+    end
+
+    set venv_path "$search_dir/.venv"
+
+    # Still inside a previously activated environment.
+    if test "$venv_path" = "$VIRTUAL_ENV"
+        return
+    end
+
+    type -q deactivate && echo "venv: deactivating $VIRTUAL_ENV" && deactivate
+    source "$venv_path/bin/activate.fish"
+    echo "venv: activating $venv_path"
 end
 
