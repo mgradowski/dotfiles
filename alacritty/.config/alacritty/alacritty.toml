@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/monokai.toml"
+    "~/.config/alacritty/themes/themes/monokai_charcoal.toml"
 ]
 
 [colors]
@@ -27,7 +27,7 @@ mods = "Control"
 [window]
 decorations = "none"
 dynamic_title = true
-opacity = 0.9
+opacity = 1
 startup_mode = "Windowed"
 
 [window.padding]
