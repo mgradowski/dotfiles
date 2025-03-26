@@ -40,16 +40,6 @@ if type -q wormhole
     alias ws 'wormhole snd'
     alias wr 'wormhole receive'
 end
-if type -q clear && type -q neofetch
-    alias cn 'clear;neofetch'
-end
-if type -q neofetch
-    function fish_greeting
-        neofetch
-    end
-else
-    set -U fish_greeting
-end
 
 if status --is-interactive
     SHELL=fish keychain --quiet --eval --agents ssh | source
@@ -98,3 +88,4 @@ function venv_hook --on-event fish_prompt
     echo "venv: activating $venv_path"
 end
 
+atuin init fish | source
