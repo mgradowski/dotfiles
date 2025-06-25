@@ -88,4 +88,26 @@ function venv_hook --on-event fish_prompt
     echo "venv: activating $venv_path"
 end
 
+function uvedit
+  if test (count $argv) -ne 1
+    echo "usage: uvedit <path to script>"
+    return 1
+  end
+
+  set -l script_path $argv[1]
+
+  if not test -f "$script_path"
+    echo "error: '$script_path' is not a file"
+    return 1
+  end
+
+  uv sync --script "$script_path"
+  set -l python_executable (uv python find --script "$script_path")
+  set -l venv_root (dirname (dirname $python_executable))
+  begin
+    source "$venv_root/bin/activate.fish"
+    nvim "$script_path"
+  end
+end
+
 atuin init fish | source
