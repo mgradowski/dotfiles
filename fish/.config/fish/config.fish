@@ -42,7 +42,7 @@ if type -q wormhole
 end
 
 if status --is-interactive
-    SHELL=fish keychain --quiet --eval --agents ssh | source
+    SHELL=fish keychain --quiet --eval --agents ssh --inherit any | source
     fish_user_key_bindings
 end
 
