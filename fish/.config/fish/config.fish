@@ -13,6 +13,10 @@ export LC_ALL=en_US.UTF-8
 set -U fish_greeting
 
 
+function err
+    echo $argv >&2
+end
+
 # venv_hook
 
 function pause_venv_hook
@@ -37,7 +41,7 @@ function venv_hook --on-event fish_prompt
 
     # Deactivate if left a python project subtree.
     if test "$search_dir" = "/"
-        type -q deactivate && echo "venv: deactivating $VIRTUAL_ENV" && deactivate
+        type -q deactivate && err "venv: deactivating $VIRTUAL_ENV" && deactivate
         return
     end
 
@@ -48,9 +52,9 @@ function venv_hook --on-event fish_prompt
         return
     end
 
-    type -q deactivate && echo "venv: deactivating $VIRTUAL_ENV" && deactivate
+    type -q deactivate && err "venv: deactivating $VIRTUAL_ENV" && deactivate
     source "$venv_path/bin/activate.fish"
-    echo "venv: activating $venv_path"
+    err "venv: activating $venv_path"
 end
 
 
@@ -58,14 +62,14 @@ end
 
 function uvedit
   if test (count $argv) -ne 1
-    echo "usage: uvedit <path to script>"
+    err "usage: uvedit <path to script>"
     return 1
   end
 
   set -l script_path $argv[1]
 
   if not test -f "$script_path"
-    echo "error: '$script_path' is not a file"
+    err "error: '$script_path' is not a file"
     return 1
   end
 
@@ -83,20 +87,28 @@ end
 # ssh proxy utils
 
 function proxy
-    export ALL_PROXY=socks5://127.0.0.1:9999
-    export HTTPS_PROXY=socks5://127.0.0.1:9999
-    echo 'proxy: activated'
+    set --local _ssh_proxy socks5://127.0.0.1:9999
+
+    if test -z "$argv"
+        export ALL_PROXY=$_ssh_proxy
+        export HTTPS_PROXY=$_ssh_proxy
+        err 'proxy: activated'
+    else if test -z "$ALL_PROXY" -o -z "$HTTPS_PROXY"
+        err 'proxy: temporarily activated'
+        ALL_PROXY=$_ssh_proxy HTTPS_PROXY=$_ssh_proxy command $argv
+    else
+        command $argv
+    end
 end
 
 function unproxy
     if test -z "$argv"
         set --erase ALL_PROXY
         set --erase HTTPS_PROXY
-        echo 'proxy: deactivated'
+        err 'proxy: deactivated'
     else if test -n "$ALL_PROXY" -o -n "$HTTPS_PROXY"
-        echo 'proxy: temporarily deactivated'
+        err 'proxy: temporarily deactivated'
         env -u ALL_PROXY -u HTTPS_PROXY $argv
-        echo 'proxy: activated'
     else
         command $argv
     end
