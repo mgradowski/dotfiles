@@ -11,6 +11,7 @@ function DeezColorz(color)
     vim.api.nvim_set_hl(0, "Visual", { reverse = true })
 
     vim.api.nvim_set_hl(0, "NonText", { ctermfg = 8 })
+    vim.api.nvim_set_hl(0, "VimwikiCode", { ctermfg = 2 })
 
     vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { ctermfg = 8 })
     -- vim.api.nvim_set_hl(0, "IndentBlanklineChar", { ctermfg = 247 })

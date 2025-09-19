@@ -38,3 +38,5 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGai
     command = "if mode() != 'c' | checktime | endif",
     pattern = { "*" },
 })
+
+vim.g.omni_sql_no_default_maps = 1

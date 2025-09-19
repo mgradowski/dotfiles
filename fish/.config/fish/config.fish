@@ -1,4 +1,5 @@
 # common configs
+
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -9,46 +10,10 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# macOS-specific configs
-if test (uname) = 'Darwin'
-    export PATH="/opt/homebrew/bin:$PATH"
-    export PATH=/opt/context/tex/texmf-osx-64/bin:"$PATH"
+set -U fish_greeting
 
-    export HOMEBREW_NO_AUTO_UPDATE=1
-    export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile/Brewfile
-end
 
-function cd
-    if test -z "$TMUX_SESSIONIZER" && test -z "$argv"
-        builtin cd
-    else if test -z "$TMUX_SESSIONIZER"
-        builtin cd "$argv"
-    else if test -z "$argv"
-        builtin cd (tmux display -p "#{pane_start_path}")
-    else
-        builtin cd "$argv"
-    end
-end
-
-alias nv 'nvim .'
-alias va 'source (find . | grep -F bin/activate.fish | head -n1)'
-alias da 'deactivate'
-alias vinit 'python3 -m venv .venv'
-alias reload_fish_config 'source "$__fish_config_dir/config.fish"'
-
-if type -q wormhole
-    alias ws 'wormhole snd'
-    alias wr 'wormhole receive'
-end
-
-if status --is-interactive
-    SHELL=fish keychain --quiet --eval --agents ssh --inherit any | source
-    fish_user_key_bindings
-end
-
-if type -q direnv
-    direnv hook fish | source
-end
+# venv_hook
 
 function pause_venv_hook
     mkdir -p ~/.local/state/venv_hook
@@ -88,6 +53,9 @@ function venv_hook --on-event fish_prompt
     echo "venv: activating $venv_path"
 end
 
+
+# uvedit
+
 function uvedit
   if test (count $argv) -ne 1
     echo "usage: uvedit <path to script>"
@@ -110,4 +78,83 @@ function uvedit
   end
 end
 
+
+
+# ssh proxy utils
+
+function proxy
+    export ALL_PROXY=socks5://127.0.0.1:9999
+    export HTTPS_PROXY=socks5://127.0.0.1:9999
+    echo 'proxy: activated'
+end
+
+function unproxy
+    if test -z "$argv"
+        set --erase ALL_PROXY
+        set --erase HTTPS_PROXY
+        echo 'proxy: deactivated'
+    else if test -n "$ALL_PROXY" -o -n "$HTTPS_PROXY"
+        echo 'proxy: temporarily deactivated'
+        env -u ALL_PROXY -u HTTPS_PROXY $argv
+        echo 'proxy: activated'
+    else
+        command $argv
+    end
+end
+
+
+# macOS-specific configs
+
+if test (uname) = 'Darwin'
+    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH=/opt/context/tex/texmf-osx-64/bin:"$PATH"
+
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile/Brewfile
+end
+
+
+# host-specific configs
+
+if test (string match -r '^4d23bca0.*' (hostname | sha512sum))
+    # fix pre-commit (pysocks)
+    export VIRTUALENV_SYSTEM_SITE_PACKAGES=True
+
+    alias uvx 'command uvx --with pysocks'
+
+    ulimit -n 10240
+end
+
+
+if not status --is-interactive
+    return
+end
+
+# interactive configs
+
+fish_user_key_bindings
+SHELL=fish keychain --quiet --eval --agents ssh --inherit any | source
 atuin init fish | source
+
+if type -q direnv
+    direnv hook fish | source
+end
+
+alias nv 'nvim .'
+alias va 'source (find . | grep -F bin/activate.fish | head -n1)'
+alias da 'deactivate'
+alias vinit 'python3 -m venv .venv'
+alias reload_fish_config 'source "$__fish_config_dir/config.fish"'
+alias poetry 'uvx --with pysocks poetry'
+
+function cd
+    if test -z "$TMUX_SESSIONIZER" && test -z "$argv"
+        builtin cd
+    else if test -z "$TMUX_SESSIONIZER"
+        builtin cd "$argv"
+    else if test -z "$argv"
+        builtin cd (tmux display -p "#{pane_start_path}")
+    else
+        builtin cd "$argv"
+    end
+end

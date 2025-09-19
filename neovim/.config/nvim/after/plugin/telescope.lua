@@ -39,7 +39,10 @@ vim.keymap.set('n', '<leader>ps', function()
 end, {})
 vim.keymap.set('n', '<C-p>', function()
     minifiles.close()
-    builtin.git_files()
+    local status, _ = pcall(builtin.git_files)
+    if not status then
+        builtin.find_files()
+    end
 end, {})
 vim.keymap.set('n', '<leader>pf', function()
     minifiles.close()

@@ -15,3 +15,7 @@ ga = graph --all
 [user]
 	email = hello@mgradow.ski
 	name = Mikołaj Gradowski
+
+[includeIf "hasconfig:remote.*.url:git@git.corp.xtb.com:*/**"]
+    path = ~/.gitconfig.xtb
+
