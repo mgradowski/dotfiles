@@ -62,6 +62,7 @@ cmp.setup({
         { name = "calc" },
         { name = "buffer" },
         { name = "path" },
+        { name = "tmux",    option = { all_panes = true, capture_history = true, } },
     },
 
     snippet = {

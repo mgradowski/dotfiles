@@ -35,10 +35,11 @@ lualine.setup({
         lualine_b = {
             {
                 'branch',
-                icon = '',
+                -- icon = '',
             },
             {
                 'diff',
+                colored = true,
             },
         },
         lualine_c = {

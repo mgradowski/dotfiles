@@ -40,4 +40,5 @@ return {
     'nvim-treesitter/nvim-treesitter-context',
     'vimwiki/vimwiki',
     'windwp/nvim-autopairs',
+    'codethread/qmk.nvim'
 }

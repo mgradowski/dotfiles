@@ -20,7 +20,7 @@ end
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "vimwiki",
-    callback = function()
-        vim.keymap.set('n', '<Leader>d', insert_date, { buffer = true, noremap = true, silent = true })
+    callback = function(event)
+        vim.keymap.set('n', '<Leader>d', insert_date, { buffer = event.bufnr, noremap = true, silent = true })
     end,
 })

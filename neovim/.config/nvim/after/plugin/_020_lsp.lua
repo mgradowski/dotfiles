@@ -1,14 +1,13 @@
 local lazydev = require('lazydev')
-local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local mason_null_ls = require("mason-null-ls")
 local null_ls = require('null-ls')
 
 mason_lspconfig.setup({
-    handlers= {
+    handlers = {
         -- default handler
         function(server)
-            require('lspconfig')[server].setup({
+            vim.lsp.config(server, {
                 capabilities = require('cmp_nvim_lsp').default_capabilities(),
             })
         end,
@@ -17,23 +16,18 @@ mason_lspconfig.setup({
 
 lazydev.setup()
 
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.isort,
-    }
-
-})
-
-
 mason_null_ls.setup({
     ensure_installed = {
         "autoflake",
-        "black",
         "isort",
+        "ruff",
+        "black",
     },
+    handlers = {},
     automatic_installation = false,
 })
+
+null_ls.setup()
 
 
 vim.api.nvim_create_autocmd(
@@ -69,15 +63,15 @@ vim.api.nvim_create_autocmd(
         end
     }
 )
---
--- lspconfig.beancount.setup({
---     init_options = {
---         journal_file = vim.fn.expand("~/projects/ledger/main.bean")
---     }
--- })
---
--- vim.filetype.add({
---     extension = {
---         bean = 'beancount',
---     }
--- })
+
+vim.lsp.config('beancount', {
+    init_options = {
+        journal_file = vim.fn.expand("~/projects/ledger/main.bean")
+    }
+})
+
+vim.filetype.add({
+    extension = {
+        bean = 'beancount',
+    }
+})

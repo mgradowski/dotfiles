@@ -16,7 +16,7 @@ function DeezColorz(color)
     vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { ctermfg = 8 })
     -- vim.api.nvim_set_hl(0, "IndentBlanklineChar", { ctermfg = 247 })
 
-    extend_hl(0, "DiffAdd", { ctermbg = 0, ctermfg = 2, bold = true })
+    extend_hl(0, "DiffAdd", { ctermbg = "none", ctermfg = 2, bold = true })
     extend_hl(0, "DiffChange", { ctermfg = 11, bold = true })
     extend_hl(0, "DiffDelete", { ctermfg = 9, bold = true })
 

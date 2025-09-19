@@ -35,4 +35,17 @@ vim.keymap.set('n', '<F11>', dap.step_into)
 vim.keymap.set('n', '<F12>', dap.step_out)
 vim.keymap.set('n', '<Leader>b', dap.toggle_breakpoint)
 
-vim.keymap.set('n', '<Leader>dd', dapui.toggle)
+-- vim.api.nvim_create_autocmd("FileType", {
+--     pattern = "*",
+--     callback = function(event)
+--         if event.match == 'vimwiki' then
+--             return
+--         end
+--
+--         vim.keymap.set('n', '<Leader>dd', dapui.toggle, { buffer = event.bufnr })
+--         vim.keymap.set('n', '<leader>ds', function()
+--             minifiles.close()
+--             telescope.extensions.dap.frames()
+--         end, { buffer = event.bufnr })
+--     })
+-- end,
