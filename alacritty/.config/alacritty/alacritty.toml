@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/monokai_charcoal.toml"
+    "~/.config/alacritty/themes/themes/baitong.toml"
 ]
 
 [colors]
@@ -17,7 +17,7 @@ TERM = "xterm-256color"
 
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
-size = 11
+size = 12
 
 [[keyboard.bindings]]
 chars = "\u001F"
