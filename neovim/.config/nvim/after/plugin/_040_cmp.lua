@@ -4,9 +4,6 @@ local cmp = require('cmp')
 
 vim.keymap.set({ "i", "c", "s" }, "<C-n>",
     function()
-        if luasnip.in_snippet() and luasnip.jump(1) then
-            return
-        end
         if cmp.select_next_item({ behavior = 'insert' }) then
             return
         end
@@ -18,8 +15,8 @@ vim.keymap.set({ "i", "c", "s" }, "<C-n>",
 
 vim.keymap.set({ "i", "c", "s" }, "<C-p>",
     function()
-        if luasnip.in_snippet() and luasnip.jump(-1) then
-            return
+        if not cmp.visible() then
+            cmp.complete()
         end
         if cmp.select_prev_item({ behavior = 'insert' }) then
             return
