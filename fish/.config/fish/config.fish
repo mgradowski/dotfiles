@@ -150,7 +150,7 @@ end
 # interactive configs
 
 fish_user_key_bindings
-SHELL=fish keychain --quiet --eval --agents ssh --inherit any | source
+SHELL=fish keychain --quiet --eval --ssh-allow-forwarded | source
 atuin init fish | source
 
 if type -q direnv
