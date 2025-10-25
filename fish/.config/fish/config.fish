@@ -125,6 +125,11 @@ if test (uname) = 'Darwin'
     export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile/Brewfile
 end
 
+# arch-linux `hostname` fix
+if not type -q hostname && type -q hostnamectl
+    alias hostname 'hostnamectl hostname'
+end
+
 
 # host-specific configs
 
