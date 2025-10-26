@@ -33,6 +33,10 @@ vim.opt.linebreak = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevelstart = 99
+
 vim.o.autoread = true
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
     command = "if mode() != 'c' | checktime | endif",
