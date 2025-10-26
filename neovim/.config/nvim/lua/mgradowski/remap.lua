@@ -45,8 +45,9 @@ vim.keymap.set("i", "<C-f>", "<Right>")
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_prev)
+
 
 if vim.g.neovide then
     vim.keymap.set('n', '<D-s>', ':w<CR>')      -- Save
