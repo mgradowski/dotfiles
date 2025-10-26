@@ -36,13 +36,6 @@ vim.cmd("cabb wq write<bar>silent! close")
 -- Replace the word under the cursor across the current buffer
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- tmux sesionizer on Ctrl+f
-vim.keymap.set("n", "<C-b>", "<cmd>silent !tmux neww fish -c tmux_sessionizer<CR>")
-
--- git graph
-vim.keymap.set("n", "<leader>gg", "<cmd>silent !tmux neww git g<CR>")
-vim.keymap.set("n", "<leader>ga", "<cmd>silent !tmux neww git ga<CR>")
-
 -- Jump buffer forward
 vim.keymap.set("n", "<leader><C-o>", "<C-i>")
 
