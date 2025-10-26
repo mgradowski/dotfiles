@@ -40,5 +40,11 @@ return {
     'vimwiki/vimwiki',
     'windwp/nvim-autopairs',
     'codethread/qmk.nvim',
-    'folke/which-key.nvim'
+    'folke/which-key.nvim',
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
 }
