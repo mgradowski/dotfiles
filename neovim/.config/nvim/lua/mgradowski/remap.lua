@@ -56,6 +56,24 @@ if vim.g.neovide then
     vim.keymap.set('v', '<D-v>', '"+P')         -- Paste visual mode
     vim.keymap.set('c', '<D-v>', '<C-R>+')      -- Paste command mode
     vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+
+
+    -- stupid place to keep this but whatever
+    local _initial_initial_scale_factor = 0.9
+    vim.g.neovide_scale_factor = _initial_initial_scale_factor
+
+    vim.keymap.set({ "n", "v", "i" }, "<D-+>",
+        function()
+            vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.025
+        end)
+    vim.keymap.set({ "n", "v", "i" }, "<D-->",
+        function()
+            vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.025
+        end)
+    vim.keymap.set({ "n", "v", "i" }, "<D-0>",
+        function()
+            vim.g.neovide_scale_factor = _initial_initial_scale_factor
+        end)
 end
 
 vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
