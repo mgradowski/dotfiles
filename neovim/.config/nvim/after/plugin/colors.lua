@@ -1,5 +1,6 @@
 if vim.g.neovide then
     vim.cmd.colorscheme("tokyonight")
+    vim.g.neovide_opacity = 0.97
     return
 end
 
