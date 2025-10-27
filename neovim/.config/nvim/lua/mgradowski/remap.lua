@@ -81,4 +81,6 @@ vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
 
-vim.keymap.set('c', '<C-f>', '<Nop>') -- Paste command mode
+vim.keymap.set('c', '<C-f>', '<Nop>')
+
+vim.api.nvim_set_keymap('t', '<C-o>', '<C-\\><C-N>', { noremap = true, silent = true })
