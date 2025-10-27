@@ -5,6 +5,8 @@ local sorters = require('telescope.sorters')
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
 
+local home = vim.fn.expand('~')
+
 local goto_session = function(root)
     local found_existing = false
     for _, tab_id in ipairs(vim.api.nvim_list_tabpages()) do
@@ -29,7 +31,9 @@ local goto_session = function(root)
         vim.api.nvim_tabpage_set_var(0, "nvim_sessionizer__root", root)
 
         -- initialize the new window
-        vim.cmd("vsplit")
+        if root ~= home then
+            vim.cmd("vsplit")
+        end
         vim.cmd("wincmd l")
         vim.cmd("terminal")
         vim.defer_fn(function()
@@ -41,8 +45,8 @@ end
 local session_picker = function(opts)
     opts = opts or {}
 
-    local home = vim.fn.expand('~')
     local dirs = {
+        home,
         home .. '/vimwiki',
         home .. '/dotfiles',
     }
@@ -73,4 +77,4 @@ local session_picker = function(opts)
     }):find()
 end
 
-vim.keymap.set("n", "<C-b>", session_picker)
+vim.keymap.set({ "n", "t" }, "<C-b>", session_picker)
