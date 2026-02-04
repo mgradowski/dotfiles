@@ -9,7 +9,7 @@ function voodoo
         set voodoo_elapsed (math "$voodoo_elapsed + ($voodoo_end - $voodoo_start) * 1000.0")
     end
 
-    function vatleast --argument-names version --no-scope-shadowing
+    function vatleast --argument-names schema_version --no-scope-shadowing
         test (runsql 'pragma user_version;') -ge $argv[1]
     end
 
