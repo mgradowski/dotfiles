@@ -48,26 +48,6 @@ vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_prev)
 
-
-if vim.g.neovide then
-    -- stupid place to keep this but whatever
-    local _initial_initial_scale_factor = 0.9
-    vim.g.neovide_scale_factor = _initial_initial_scale_factor
-
-    vim.keymap.set({ "n", "v", "i" }, "<D-+>",
-        function()
-            vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.025
-        end)
-    vim.keymap.set({ "n", "v", "i" }, "<D-->",
-        function()
-            vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.025
-        end)
-    vim.keymap.set({ "n", "v", "i" }, "<D-0>",
-        function()
-            vim.g.neovide_scale_factor = _initial_initial_scale_factor
-        end)
-end
-
 vim.keymap.set('n', '<D-s>', ':w<CR>')          -- Save
 vim.keymap.set('v', '<D-c>', '"+y')             -- Copy
 vim.keymap.set('n', '<D-v>', '"+P')             -- Paste normal mode

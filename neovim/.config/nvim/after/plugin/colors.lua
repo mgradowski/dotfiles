@@ -1,9 +1,3 @@
-if vim.g.neovide then
-    vim.cmd.colorscheme("tokyonight")
-    vim.g.neovide_opacity = 0.97
-    return
-end
-
 local function extend_hl(ns_id, name, val)
     local old = vim.api.nvim_get_hl(ns_id, { name = name })
     local new = vim.tbl_extend('force', old, val)
