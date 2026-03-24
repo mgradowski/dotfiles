@@ -21,3 +21,5 @@ ga = graph --all
 
 [fetch]
 	prune = true
+[merge]
+	conflictstyle = diff3
