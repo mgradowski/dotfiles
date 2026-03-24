@@ -19,3 +19,5 @@ ga = graph --all
 [includeIf "hasconfig:remote.*.url:git@git.corp.xtb.com:*/**"]
     path = ~/.gitconfig.xtb
 
+[fetch]
+	prune = true
