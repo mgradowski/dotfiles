@@ -29,10 +29,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Defy the muscle memory
-vim.cmd("cabb q silent! close")
-vim.cmd("cabb wq write<bar>silent! close")
-
 -- Replace the word under the cursor across the current buffer
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
