@@ -131,6 +131,12 @@ if not type -q hostname && type -q hostnamectl
 end
 
 
+if type -q nvim
+    export EDITOR=nvim
+    bind \ce edit_command_buffer
+end
+
+
 # host-specific configs
 
 if test (string match -r '^4d23bca0.*' (hostname | sha512sum))
