@@ -23,3 +23,5 @@ ga = graph --all
 	prune = true
 [merge]
 	conflictstyle = diff3
+[rebase]
+	autoStash = true
