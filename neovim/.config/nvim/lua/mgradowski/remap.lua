@@ -81,3 +81,6 @@ end)
 
 -- tmux sesionizer on Ctrl+f
 vim.keymap.set("n", "<C-b>", "<cmd>silent !tmux neww fish -c tmux_sessionizer<CR>")
+
+-- unmap q:
+vim.keymap.set('n', 'q:', '<Nop>')
