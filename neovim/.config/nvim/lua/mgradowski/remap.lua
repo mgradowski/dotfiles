@@ -58,27 +58,6 @@ vim.keymap.set('c', '<C-f>', '<Nop>')
 
 vim.api.nvim_set_keymap('t', '<C-o>', '<C-\\><C-N>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>gs", function()
-    vim.cmd("wa")
-    vim.cmd("terminal lazygit")
-    local buf = vim.api.nvim_get_current_buf()
-
-    vim.api.nvim_create_autocmd("TermClose", {
-        buffer = buf,
-        once = true,
-        callback = function()
-            vim.schedule(function()
-                if vim.api.nvim_buf_is_valid(buf) then
-                    vim.api.nvim_buf_delete(buf, { force = true })
-                end
-            end)
-        end,
-    })
-
-    vim.cmd("startinsert")
-end)
-
-
 -- tmux sesionizer on Ctrl+f
 vim.keymap.set("n", "<C-b>", "<cmd>silent !tmux neww fish -c tmux_sessionizer<CR>")
 
