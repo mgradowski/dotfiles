@@ -4,3 +4,4 @@ neovim/.config/nvim/plugin/packer_compiled.lua
 .taskrc
 spotify-tui
 
+btop/.config/btop/btop.conf
