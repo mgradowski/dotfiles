@@ -25,3 +25,5 @@ ga = graph --all
 	conflictstyle = diff3
 [rebase]
 	autoStash = true
+[diff]
+    external = difft
