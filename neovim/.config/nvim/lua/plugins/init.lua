@@ -26,7 +26,8 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+        build = ':TSUpdate',
+        branch = 'main',
     },
     'nvim-treesitter/nvim-treesitter-context',
     'vimwiki/vimwiki',
