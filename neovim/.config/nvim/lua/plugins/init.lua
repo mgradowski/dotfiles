@@ -39,4 +39,5 @@ return {
         priority = 1000,
         opts = {},
     },
+    { 'nvim-mini/mini.animate',                   version = '*' },
 }
