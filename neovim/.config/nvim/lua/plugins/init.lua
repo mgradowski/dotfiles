@@ -21,6 +21,7 @@ return {
     'numToStr/Comment.nvim',
     'numToStr/Navigator.nvim',
     'nvim-lualine/lualine.nvim',
+    'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
     'nvim-telescope/telescope-dap.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
